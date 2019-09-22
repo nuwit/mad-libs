@@ -55,7 +55,7 @@ Paste your story between `<h3>` (line 83) and `</h3>` line 91.
 
 A node can also contain other nodes within it (see the `<span class="person></span>` node between the two `h3`?).
 
-For every blank in your story, create a `<span>` to replace it. A `<span>` is an inline element. This means it will be formatted just like everything elese in the paragraph. 
+For every blank in your story, create a `<span>` to replace it. A `<span>` is an inline element. This means it will be formatted just like everything else in the paragraph. 
 
 For every span you add, you should give it a unique **class** (or `class` attribute). This class should be the label you chose for the blank you're replacing. If you're confused, here's how this looks:
 
