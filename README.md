@@ -162,7 +162,7 @@ Open up `js/main.js` in your coding editor.
 
 **IMPORTANT!!!** Delete everything between line 10 and line 14. These lines were included only for demonstration.. 
 
-What you're seeing in this file is **JQuery**, a Javascript library that allows easy traversal and manipulation of HTML files. We use it to make our lives easier (and most Javascript you see on the web does the same!)
+What you're seeing in this file is **JQuery**, a Javascript library that allows easy traversal and manipulation of HTML files. We use it to easily grab, change, and replace HTML elements. JQuery is extremely popular across the web for this exact purpose. 
 
 See line 9:
 ```      
@@ -171,10 +171,10 @@ $(".person").empty().append($("input.person").val());
 
 Let's break down what this line is doing:
 
-1. `$(".person")` finds an element with a class `class="person"` attribute
+1. `$(".person")` finds an element with a class `class="person"` attribute. Namely, `<span class="person"></span>` . `class="person"` in HTML and `.person` in CSS and Javascript both indicate element(s) of that particular class.  
 2. `$(".person").empty()` clears the contents of that element
 3. `$("input.person").val()` retrieves the value recorded by the form that also shares the `person` class
-4. `$(".person").empty().append($("input.person").val());` takes the `<span class="person></span>` element, empties it (in case something got accidentaly placed in the `span`, then fills it with what the user entered for the "person" field. 
+4. `$(".person").empty().append($("input.person").val());` takes the `<span class="person></span>` element, empties it (in case something got accidentaly placed in the `span`), then fills it with whatever the user entered for the "person" field. 
 
 We want to **change** this line to match OUR blanks, rather than the starter code. I would thus change this line to match my example: 
 
@@ -193,5 +193,6 @@ $(".noun2").empty().append($("input.noun2").val());
 
 Once you have a line of javascript for every blank, you're done!!! Save your files, open up `index.html` in a browser, and test out your Mad Libs!
 
+Now, there's a lot we won't have time to explain here. If you want a full HTML, CSS, JS tutorial make sure to attend our Personal Website Hack Day in the spring!
 
 #### Adapted from [mjhea0's](https://github.com/mjhea0) [Mad Libs Tutorial](https://github.com/mjhea0/jquery-madlibs).
