@@ -53,23 +53,23 @@ Paste your story between `<h3>` (line 83) and `</h3>` line 91.
 
 `<h3>...</h3>` are HTML tags. HTML is essentially a big tree of information. Everything between a starting (`<h3>`) and a closing (`</h3>`) tag constitutes an HTML node, commonly known as an **element**. Everything within that element can be formatted and styled a certain way. `h3`, in particular, is a heading element of the third biggest size (`h1` would be a very large, very bold heading, `h2` would be the next biggest heading). 
 
-A node can also contain other nodes within it (see the `<span id="person></span>` node between the two `h3`?).
+A node can also contain other nodes within it (see the `<span class="person></span>` node between the two `h3`?).
 
 For every blank in your story, create a `<span>` to replace it. A `<span>` is an inline element. This means it will be formatted just like everything elese in the paragraph. 
 
-For every span you add, you should give it a unique **identifier** (or `id` attribute). This identifier should be the label you chose for the blank you're replacing. If you're confused, here's how this looks:
+For every span you add, you should give it a unique **class** (or `class` attribute). This class should be the label you chose for the blank you're replacing. If you're confused, here's how this looks:
 
 ```
-There once was a man from <span id="country"></span> who dreamed he was eating his <span id="noun"></span>...
+There once was a man from <span class="country"></span> who dreamed he was eating his <span class="noun"></span>...
 ```
 
 If you have two identical labels (for example, two nouns), just increment them:
 
 ```
-There once was a man from <span id="country"></span> who dreamed he was eating his <span id="noun"></span>. He woke up one <span id="noun2"></span>...
+There once was a man from <span class="country"></span> who dreamed he was eating his <span class="noun"></span>. He woke up one <span class="noun2"></span>...
 ```
 
-Make sure you replace all your blanks with `<span>` tags. No two `id` attributes should be the same. 
+Make sure you replace all your blanks with `<span>` tags. No two of your blanks' `class` attributes should be the same (unless the blank repeats).  
 
 ## 6. Edit the Mad Libs form. 
 
@@ -156,3 +156,42 @@ You can now open up/refresh `index.html` in a browser by clicking the file in yo
 
 However, if you fill in the appropriate info and press `Generate`, the values you're looking for will be missing from the story! We still need to edit the Javascript!
 
+## 6. Edit the Javascript.
+
+Open up `js/main.js` in your coding editor. 
+
+**IMPORTANT!!!** Delete everything between line 10 and line 14. These lines were included only for demonstration.. 
+
+What you're seeing in this file is **JQuery**, a Javascript library that allows easy traversal and manipulation of HTML files. We use it to make our lives easier (and most Javascript you see on the web does the same!)
+
+See line 9:
+```      
+$(".person").empty().append($("input.person").val());
+```
+
+Let's break down what this line is doing:
+
+1. `$(".person")` finds an element with a class `class="person"` attribute
+2. `$(".person").empty()` clears the contents of that element
+3. `$("input.person").val()` retrieves the value recorded by the form that also shares the `person` class
+4. `$(".person").empty().append($("input.person").val());` takes the `<span class="person></span>` element, empties it (in case something got accidentaly placed in the `span`, then fills it with what the user entered for the "person" field. 
+
+We want to **change** this line to match OUR blanks, rather than the starter code. I would thus change this line to match my example: 
+
+```
+$(".country").empty().append($("input.country").val());
+```
+...with all `person` classes switched to `country`
+
+And then, I would duplicate and edit this line of javascript for every blank in my story:
+
+```
+$(".country").empty().append($("input.country").val());
+$(".noun").empty().append($("input.noun").val());
+$(".noun2").empty().append($("input.noun2").val());
+```
+
+Once you have a line of javascript for every blank, you're done!!! Save your files, open up `index.html` in a browser, and test out your Mad Libs!
+
+
+#### Adapted from [mjhea0's](https://github.com/mjhea0) [Mad Libs Tutorial](https://github.com/mjhea0/jquery-madlibs).
