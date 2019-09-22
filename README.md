@@ -23,6 +23,8 @@ Press this button and select **Download ZIP**
 
 Make sure you save the folder somewhere you can remember! Then, use your file explorer to navigate to the saved zip. Unzip the folder. Feel free to delete the zip and keep the unzipped files. 
 
+**If you'd like to test the starter code (and test your changes throughout) double click `index.html`. Refresh the page to view changes as you make them.**
+
 ## 3. Open the folder in a code editor.
 
 For atom or sublime this might look a little different, but use this option to open the `mad-libs` folder wherever you saved it:
@@ -42,7 +44,9 @@ This is the story you're going to edit. Inside this story is some plaintext, whi
 
 First, write down a quick story that you'd like to use for Mad Libs. Then, select some words to turn into **blanks**. Replace them with descriptors (i.e. "person", "animal", "adjective", "color", etc) inside brackets. For example:
 
-```There once was a man from [country] who dreamed he was eating his [noun]...```
+```
+There once was a man from [country] who dreamed he was eating his [noun]...
+```
 
 ## 5. Add and edit your story. 
 Paste your story between `<h3>` (line 83) and `</h3>` line 91. 
@@ -55,13 +59,95 @@ For every blank in your story, create a `<span>` to replace it. A `<span>` is an
 
 For every span you add, you should give it a unique **identifier** (or `id` attribute). This identifier should be the label you chose for the blank you're replacing. If you're confused, here's how this looks:
 
-```There once was a man from <span id="country"></span> who dreamed he was eating his <span id="noun"></span>...```
+```
+There once was a man from <span id="country"></span> who dreamed he was eating his <span id="noun"></span>...
+```
 
 If you have two identical labels (for example, two nouns), just increment them:
 
-```There once was a man from <span id="country"></span> who dreamed he was eating his <span id="noun"></span>. He woke up one <span id="noun2"></span>...```
+```
+There once was a man from <span id="country"></span> who dreamed he was eating his <span id="noun"></span>. He woke up one <span id="noun2"></span>...
+```
 
+Make sure you replace all your blanks with `<span>` tags. No two `id` attributes should be the same. 
 
+## 6. Edit the Mad Libs form. 
 
+Scroll up to line 19 (`<form role="form">`).
+
+**IMPORTANT!!!** Delete everything between line 29 and line 69. These lines were included only for demonstration. By the time this is done, there should only be one `<div class="form-group">...</div>`. 
+
+For every blank in your story, you are going to need to create an `form-group` for your user. This `form-group` will contain an input that will allow users to "fill in" the blank. 
+
+You'll want to edit the remaining `form-group` element to match your first blank's `id` and overall concept. Between line 20 and 27, switch over everything having to do with `person` or `name` to your first blank's info. 
+
+For our "Man From Peru" example, our first `form-group` should change from this:
+
+```
+<div class="form-group">
+  <label for="person">Boy's Name</label>
+  <input
+    for="person"
+    class="form-control person"
+    type="text"
+    placeholder="Enter a boy's name .."
+  />
+</div>
+```
+
+to this:
+
+```
+<div class="form-group">
+  <label for="country">Country</label>
+  <input
+    for="country"
+    class="form-control country"
+    type="text"
+    placeholder="Enter a country..."
+  />
+</div>
+
+```
+
+Note:
+- `<label for="person">Boy's Name</label>` became `<label for="country">Country</label>`
+- the input's `for="person"` attribute became `for="country"`
+- the input's `class="form-control person"` became `class="form-control country"`
+- the input's `placeholder="Enter a boy's name .."` became `placeholder="Enter a country..."`
+
+Changing these attributes will associate the input with the blank you made in your story. Make sure you're editing for YOUR first blank, though (NOT country or person, like our examples)! 
+
+Copy and paste a form-group beside this one for every blank in your story and edit the attributes accordingly. For our example, this would look like:
+
+```
+<div class="form-group">
+  <label for="country">Country</label>
+  <input
+    for="country"
+    class="form-control country"
+    type="text"
+    placeholder="Enter a country..."
+  />
+</div>
+<div class="form-group">
+  <label for="noun">Noun</label>
+  <input
+    for="noun"
+    class="form-control noun"
+    type="text"
+    placeholder="Enter a noun..."
+  />
+</div>
+<div class="form-group">
+  <label for="noun2">Noun</label>
+  <input
+    for="noun2"
+    class="form-control noun2"
+    type="text"
+    placeholder="Enter a noun..."
+  />
+</div>
+```
 
 
