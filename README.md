@@ -15,7 +15,7 @@ Got it all downloaded? Great!
 
 ## 2. Download the starter code.
 
-Navigate to this repository again: bit.ly/mad-libs-nuwit
+Navigate to this repository again: https://bit.ly/mad-libs-nuwit
 
 Press this button and select **Download ZIP**
 
