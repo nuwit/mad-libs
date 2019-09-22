@@ -118,7 +118,7 @@ Note:
 
 Changing these attributes will associate the input with the blank you made in your story. Make sure you're editing for YOUR first blank, though (NOT country or person, like our examples)! 
 
-Copy and paste a form-group beside this one for every blank in your story and edit the attributes accordingly. For our example, this would look like:
+Copy and paste the `form-group` for every blank in your story and edit the attributes accordingly. The `form-group` elements you duplicate should be adjacent, not within each other. For our example, this would look like:
 
 ```
 <div class="form-group">
@@ -150,4 +150,9 @@ Copy and paste a form-group beside this one for every blank in your story and ed
 </div>
 ```
 
+Once you have a `form-group` for every blank, the form should be done!
+
+You can now open up/refresh `index.html` in a browser by clicking the file in your file explorer. You should see YOUR blanks as the new inputs. 
+
+However, if you fill in the appropriate info and press `Generate`, the values you're looking for will be missing from the story! We still need to edit the Javascript!
 
